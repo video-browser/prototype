@@ -74,12 +74,7 @@ function template({
   return `
 <html>
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161485149-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-161485149-1');
     </script>
     <link rel="icon" type="image/x-icon" href="/g/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Work+Sans:400,500,700,800,900&display=swap" rel="stylesheet">

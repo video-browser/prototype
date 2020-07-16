@@ -4,10 +4,10 @@
         "cflags!": [ "-fno-exceptions" ],
         "cflags_cc!": [ "-fno-exceptions" ],
         "sources": [
-            "cppsrc/main.cpp",
-            "cppsrc/Samples/functionexample.cpp",
-            "cppsrc/Samples/actualclass.cpp",
-            "cppsrc/Samples/classexample.cpp"
+            "modules/Samples/main.cpp",
+            "modules/Samples/functionexample.cpp",
+            "modules/Samples/actualclass.cpp",
+            "modules/Samples/classexample.cpp"
         ],
         'include_dirs': [
             "<!@(node -p \"require('node-addon-api').include\")"
