@@ -1,5 +1,5 @@
 /*
- Example how too use my library "Naive Bayers Text Classifier" 
+ Example how too use my library "Naive Bayers Text Classifier"
  Author: Cooler_
  Contact: c00f3r[at]gmail[dot]com
 */
@@ -46,8 +46,8 @@ int main(int argc, char* argv[])
 
   class_ = robot->classify(std::string("Sunset along the beach. A girl across the ocean."));
   std::cout << "High CLASS is " << class_ << std::endl;
- 
-  robot->free_bayers(); 
+
+  robot->free_bayers();
 
   return 0;
 }

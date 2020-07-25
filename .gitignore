@@ -1,6 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/c++,node,python,linux,macos,vim,visualstudiocode,visualstudio,go,rust
-# Edit at https://www.toptal.com/developers/gitignore?templates=c++,node,python,linux,macos,vim,visualstudiocode,visualstudio,go,rust
+# Created by https://www.toptal.com/developers/gitignore/api/go,vim,c++,rust,node,macos,linux,python,visualstudio,visualstudiocode,cmake
+# Edit at https://www.toptal.com/developers/gitignore?templates=go,vim,c++,rust,node,macos,linux,python,visualstudio,visualstudiocode,cmake
 
 ### C++ ###
 # Prerequisites
@@ -35,6 +34,23 @@
 *.exe
 *.out
 *.app
+
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
 
 ### Go ###
 # Binaries for programs and plugins
@@ -727,7 +743,7 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# End of https://www.toptal.com/developers/gitignore/api/c++,node,python,linux,macos,vim,visualstudiocode,visualstudio,go,rust
+# End of https://www.toptal.com/developers/gitignore/api/go,vim,c++,rust,node,macos,linux,python,visualstudio,visualstudiocode,cmake
 
 *.log
 build
@@ -737,3 +753,5 @@ db/*
 !db/.gitkeep
 data/*
 !data/.gitkeep
+
+__temp/
