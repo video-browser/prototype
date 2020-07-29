@@ -5,6 +5,14 @@ from pathlib import Path
 
 CLASSIFICATION_RESULTS_PATH = os.getcwd() + '/../../data/v3c1/classifications/results'
 
+def fileWrite(fileName,data):
+  # file2write=open(fileName,'w')
+  #file2write.write(data)
+  with open(fileName, 'w') as f:
+    print(data, file=f)
+  # print(data, file=file2write)
+  f.close()
+
 def processClassifications(videoId):
   # value = @'numerical_id' -> ['video_id','frame_id','confidence_score']
   dataDict = {} # { lineNumber: [ [001, 0001, 0.1], [002, 0001, 0.15] ] }
@@ -18,27 +26,29 @@ def processClassifications(videoId):
 
   for resultsDir, dirPaths, _ in os.walk(resultsPath):
     print("processClassifications(): processing resultsDir: %s, dirPaths: %s" % (resultsDir, dirPaths))
-    for videoId in dirPaths:
-      videoPath = os.path.join(str(resultsPath), videoId)
-      for videoDir, _, csvFiles in os.walk(videoPath):
-        print("processClassifications(): processing csvs for video. videoId: %s" % videoId)
-        for csvFile in csvFiles:
-          csvFilePath = os.path.join(videoPath, csvFile)
+    for videoId in resultsDir:
+      # videoPath = os.path.join(str(resultsPath), videoId)
+      # for videoDir, _, csvFiles in os.walk(videoPath):
+        # print("processClassifications(): processing csvs for video. videoId: %s" % videoId)
+        for csvFile in videoId:
+          print("csvfile:",csvFile)
+          csvFilePath = os.path.join(videoId, csvFile)
           print("processClassifications(): processing csvFile, csvFilePath: %s" % csvFilePath)
           with open(csvFilePath, 'r') as f:
             reader = csv.reader(f)
             for row in reader:
               for i in range(len(row)-1):
-                value = [videoDir, csvFile, row[i + 1]]
+                value = [videoId, csvFile, row[i + 1]]
                 dataDict[row[i]] = [[]]
                 dataDict[row[i]].append(dataList.append(value))
                 i += 1
-                print(dataDict)
-            return
-          break;
-        break;
-      break;
-    break;
+            print(dataDict)
+            # return
+          # break;
+        # break;
+      # break;
+    fileWrite((str(videoId)+'.txt'),dataDict)
+    # break;
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='later to be descripted...')

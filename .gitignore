@@ -751,7 +751,9 @@ build
 
 db/*
 !db/.gitkeep
-data/*
+data/**/*
 !data/.gitkeep
+database/*
+!database/.gitkeep
 
 __temp/
