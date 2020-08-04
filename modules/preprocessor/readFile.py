@@ -17,21 +17,23 @@ def readCont(f):
     contents = []
     for cont in f:
         contents.append(cont)
-    
+
     if len(contents)<=1:
         return contents
     else:
         return rank(contents)
 
 def rank(contents):
-    # print(contents)
+    print("original data")
+    print(contents)
     s = sorted(contents, key = lambda x: float(x[2]),reverse=True)
+    print("after sorting")
     print(s)
     return s
     # contents.sort(key=lambda x: x[2],reverse=True)
 
 # def sorting(filename):
-#     # filename = ("food.txt")   
+#     # filename = ("food.txt")
 #     file_handle = open(filename, "r")
 #     words = []
 #     for line in file_handle:
@@ -51,3 +53,9 @@ for subdir, dirs, mod_files in os.walk(path):
     # print(len(mod_files))
         fileRead(os.path.join(path,files))
         break
+
+if __name__ == "__main__":
+    contents = [['00996', '00996_0000418_cnn_inception100.csv', '0.0069492'],['00679', '00679_0001094_cnn_inception100.csv', '0.00111029'],['01834', '01834_0007907_cnn_inception100.csv', '0.00091328'],['01818', '01818_0000782_cnn_inception100.csv', '0.0137386'],['01577', '01577_0002650_cnn_inception100.csv', '0.00170234'],['01863', '01863_0004494_cnn_inception100.csv', '0.000311351'],['01599', '01599_0000652_cnn_inception100.csv', '3.09207e-05'],['02871', '02871_0002467_cnn_inception100.csv', '0.000849985'],['02325', '02325_0005146_cnn_inception100.csv', '0.00109981'],['03612', '03612_0001568_cnn_inception100.csv', '0.0111088'],['03509', '03509_0004854_cnn_inception100.csv', '0.000303689'],['04188', '04188_0000693_cnn_inception100.csv', '0.0053078'],['04382', '04382_0001388_cnn_inception100.csv', '0.0028163'],['04506', '04506_0004790_cnn_inception100.csv', '0.00105647'],['05853', '05853_0002293_cnn_inception100.csv', '0.00924722'],['06501', '06501_0001824_cnn_inception100.csv', '0.00436523']]
+    # print(contents)
+
+    rank(contents)
